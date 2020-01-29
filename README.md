@@ -18,4 +18,11 @@ The python modules you need to install and import are:
 
 (5) os
 
-The encoding unicode is: UTF-8.
+The encoding unicode is: (6) UTF-8.
+
+Description of specific code files：
+
+(7) demo.py: to input scenario data, select an algorithm and specify parameters.
+
+(8) root_cause.py: implementation of two algorithms, and output a list of root causes
+
