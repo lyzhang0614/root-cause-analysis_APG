@@ -7,6 +7,7 @@ import random
 import math
 
 
+
 def generate(data_dict, params_dict, save_path):
     try:
         nodes = data_dict.get('apg_nodes')
@@ -24,6 +25,7 @@ def generate(data_dict, params_dict, save_path):
                      alerts=alerts,
                      approach=approach,
                      rou=params_dict.get('rou', 0.5),
+
                      walkers=params_dict.get('walkers', 50),
                      p=params_dict.get('p', 0.2),
                      z=params_dict.get('z', 5))
@@ -33,6 +35,7 @@ def generate(data_dict, params_dict, save_path):
 
 
 class RCA():
+
     def __init__(self, nodes=None, edges=None, alerts=None, approach='state_iteration', rou=0.5, walkers=50, p=0.2,
                  z=5):
         self._rou = rou
@@ -374,6 +377,7 @@ class RCA():
         # try to keep the newest 2 model files
         if len(files) > 0:
             os.remove(os.path.join(path, min(files)))
+
         t = str(pd.Timestamp('now').strftime('%Y%m%d_%H%M%S'))
         full_path1 = os.path.join(directory, model_id, t + '.csv')
         pd.DataFrame(self.root_cause_list, columns=['root_cause', 'score']).to_csv(full_path1)

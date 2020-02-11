@@ -2,12 +2,14 @@ import os
 import pandas as pd
 from root_cause import generate
 
+
 scenario = 'simulation14'
 names = ['apg_nodes', 'apg_edges', 'alerts']
 data_dict = dict()
 for k in names:
     df = pd.read_csv(os.path.join('data_apg', scenario, k + '.csv'))
     data_dict[k] = df
+
 
 approaches = ['random_walk', 'state_iteration', 'DBR', 'random_selection', 'TBAC']
 # generate(data_dict=data_dict, params_dict=dict(approach=approaches[0], rou=0.5, walkers=50),
